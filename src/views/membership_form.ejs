@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Segmite Membership</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="/images/fav_icon.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="mx-auto container bg-white px-4">
+      <h2 class="my-8 text-center text-lg font-semibold">MEMBERSHIP FORM</h2>
+
+      <div class="grid lg:grid-cols-2 gap-5 content-start">
+        <form id="membership_form" class="space-y-6">
+          <div>
+            <label class="block font-medium">Name (Prof. Dr. Engr.)</label>
+            <input type="text" name="fullName" class="mt-1 w-full rounded-lg border p-2" />
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label class="block font-medium">Highest qualification</label>
+              <input type="text" name="qualification" class="mt-1 w-full rounded-lg border p-2" />
+            </div>
+            <div>
+              <label class="block font-medium">Specialization</label>
+              <input type="text" name="specialization" class="mt-1 w-full rounded-lg border p-2" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-medium">Designation & organization</label>
+            <input type="text" name="designation" class="mt-1 w-full rounded-lg border p-2" />
+          </div>
+
+          <div>
+            <label class="block font-medium">Address</label>
+            <textarea name="address" class="mt-1 w-full rounded-lg border p-2"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label class="block font-medium">E-mail</label>
+              <input type="email" name="email" class="mt-1 w-full rounded-lg border p-2" />
+            </div>
+            <div>
+              <label class="block font-medium">Cell #</label>
+              <input type="text" name="cell" class="mt-1 w-full rounded-lg border p-2" />
+            </div>
+          </div>
+
+          <div>
+            <label class="mb-2 block font-medium">Tick the membership desired:</label>
+            <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+              <label
+                ><input type="radio" name="membership" value="Student Member" class="mr-2" />
+                Student Member</label
+              >
+              <label
+                ><input type="radio" name="membership" value="Member" class="mr-2" /> Member</label
+              >
+              <label
+                ><input type="radio" name="membership" value="Corporate Member" class="mr-2" />
+                Corporate Member</label
+              >
+              <label
+                ><input type="radio" name="membership" value="Life Member" class="mr-2" /> *Life
+                Member</label
+              >
+            </div>
+          </div>
+
+          <div>
+            <label class="mb-2 block font-medium">Field(s) applicable:</label>
+            <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+              <label
+                ><input type="checkbox" name="fields" value="Coal, oil & gas" class="mr-2" /> Coal,
+                oil & gas</label
+              >
+              <label
+                ><input type="checkbox" name="fields" value="Ore deposits" class="mr-2" /> Ore
+                deposits</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="fields"
+                  value="Industrial rocks & minerals"
+                  class="mr-2"
+                />
+                Industrial rocks & minerals</label
+              >
+              <label
+                ><input type="checkbox" name="fields" value="Mining/quarrying" class="mr-2" />
+                Mining/quarrying</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="fields"
+                  value="Mineral processing/ metallurgy"
+                  class="mr-2"
+                />
+                Mineral processing/ metallurgy</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="fields"
+                  value="Gemstones/ dimension stone"
+                  class="mr-2"
+                />
+                Gemstones/ dimension stone</label
+              >
+              <label
+                ><input type="checkbox" name="fields" value="Renewable energy" class="mr-2" />
+                Renewable energy</label
+              >
+              <label
+                ><input type="checkbox" name="fields" value="Water/air pollution" class="mr-2" />
+                Water/air pollution</label
+              >
+              <label
+                ><input type="checkbox" name="fields" value="Sea water intrusion" class="mr-2" />
+                Sea water intrusion</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="fields"
+                  value="Soil & ground water salinity"
+                  class="mr-2"
+                />
+                Soil & ground water salinity</label
+              >
+              <label
+                ><input
+                  type="checkbox"
+                  name="fields"
+                  value="Mineral based industries"
+                  class="mr-2"
+                />
+                Mineral based industries</label
+              >
+              <div>
+                <input
+                  type="text"
+                  name="fields"
+                  placeholder="Any other ( Field applicable )"
+                  class="w-full rounded-md text-sm border px-2 py-1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-medium">
+              I would like to offer my services in SEGMITE consultancy projects. If yes, give
+              details of professional experience.
+            </label>
+            <textarea
+              name="experience"
+              class="mt-1 w-full rounded-lg border p-2 max-h-100"
+              maxlength="5000"
+            ></textarea>
+          </div>
+
+          <div>
+            <label class="block font-medium">Specific job(s) to be done</label>
+            <textarea
+              name="jobs"
+              class="mt-1 w-full rounded-lg border p-2 max-h-100"
+              maxlength="5000"
+            ></textarea>
+          </div>
+
+          <div class="flex">
+            <button
+              type="submit"
+              class="rounded-lg bg-blue-600 px-6 py-2 text-white shadow hover:bg-blue-700"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+
+        <div class="max-lg:mt-10 h-fit text-sm leading-relaxed bg-gray-50 p-4 rounded-md">
+          <h3 class="mb-2 font-semibold text-[16px]">Scope of SEGMITE & Membership Benefits</h3>
+          <p>
+            Society of Economic Geologists & Mineral Technologists is a fast growing international
+            technical NGO, founded in Peshawar in 1989 with the aim of promoting sustainable
+            development of minerals, water, and renewable energy resources, related industries and
+            protection of the environment. SEGMITE has Members, Student Members and Corporate
+            Members and Life Members from throughout Pakistan and many other countries.
+          </p>
+          <p class="mt-2">
+            SEGMITE offers Membership to scientists and technologists engaged in research and
+            teaching in the fields of Economic and Environmental Geology and applied sciences. Its
+            Corporate Membership is open to those engaged in related industries or businesses.
+          </p>
+          <p class="mt-2">
+            SEGMITE Membership benefits include discount in the registration fee for the SEGMITE
+            national and international events organized throughout the year in Pakistan. The Society
+            arranges training opportunities to its Student members and provides technical services
+            to the Corporate members.
+          </p>
+          <p class="mt-2">
+            The Society also publishes an Open Access, Quarterly, Peer reviewed, International
+            Journal of Economic and Environmental Geology from University of Karachi. It is indexed
+            in DOAJ, PASTIC, Google Scholar, BASE, Euro Pub Cross Ref DOI, ISI, ASI, SCI etc.
+          </p>
+
+          <h3 class="mt-4 font-semibold text-[16px]">Annual Membership Fee</h3>
+          <p>
+            Pakistani: Student Member: Rs.1000/-, Member: Rs. 2000/-, Corporate Member: Rs.
+            5000/-<br />
+            Foreigner: Student Member: USD 50/-, Member USD 100/-, Corporate Member: USD 200/-
+          </p>
+          <p class="mt-2">
+            Membership fee may be paid for one, two or three years in a Single Installment by Cheque
+            drawn in favor of SEGMITE or Online (Account #IBAN: PK90NBPA10810041 02771446) and
+            mailed to the Convener or Treasure on the addresses given below.
+          </p>
+          <p class="mt-2">
+            ❖ Senior scientists and Engineers and other interested may join as Life Members by
+            paying to SEGMITE Rs. 5,000/- (local) or USD. 200$ (foreigners), respectively. The Life
+            Corporate Membership fee is Rs. 10,000/-
+          </p>
+
+          <h3 class="mt-4 font-semibold text-[16px]">Contacts</h3>
+          <p>
+            <b>Prof. Dr.Viqar Husain</b><br />(Convener SEGMITE & Vice President AGID, Asia)<br />
+            Chief Editor: Int. J. Economic & Environmental Geology<br />
+            Department of Geology, University of Karachi, Pakistan<br />
+
+            <a
+              href="mailto:segmiteinternational@gmail.com"
+              target="_blank"
+              class="text-blue-800 hover:text-blue-700"
+              >segmiteinternational@gmail.com</a
+            >,
+            <a
+              href="mailto:chiefeditor.ijeeg@uok.edu.pk"
+              target="_blank"
+              class="text-blue-800 hover:text-blue-700"
+              >chiefeditor.ijeeg@uok.edu.pk</a
+            >
+          </p>
+
+          <p class="mt-2">
+            <b>Assoc. Prof. Suhail Anjum</b><br />(Treasurer SEGMITE)<br />
+            Department of Geology, Federal Urdu University Gulsahn Iqbal, Karachi, Pakistan<br />
+            <a
+              href="mailto:anjum_52@hotmail.com"
+              target="_blank"
+              class="text-blue-800 hover:text-blue-700"
+              >anjum_52@hotmail.com</a
+            >,
+            <a
+              href="mailto:segmite@gmail.com"
+              target="_blank"
+              class="text-blue-800 hover:text-blue-700"
+              >segmite@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("membership_form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        const formObject = {
+          fullName: formData.get("fullName"),
+          qualification: formData.get("qualification"),
+          specialization: formData.get("specialization"),
+          designation: formData.get("designation"),
+          address: formData.get("address"),
+          email: formData.get("email"),
+          cell: formData.get("cell"),
+          membership: formData.get("membership"),
+          experience: formData.get("experience"),
+          fields: formData.getAll("fields"),
+          specificJobs: formData.get("jobs"),
+        };
+
+        if (!formObject.fullName) return alert("Please add fullname !");
+        if (!formObject.qualification) return alert("Please add qualification !");
+        if (!formObject.specialization) return alert("Please add specialization !");
+        if (!formObject.designation) return alert("Please add designation & organization !");
+        if (!formObject.address) return alert("Please add address !");
+        if (!formObject.email) return alert("Please add email !");
+        if (!formObject.cell) return alert("Please add cell !");
+        if (!formObject.membership) return alert("Please select membership !");
+        if (formObject.fields.length === 0) return alert("Please select Field applicable !");
+        if (!formObject.experience) return alert("Please add experience !");
+        if (!formObject.specificJobs) return alert("Please add specificJobs !");
+
+        console.log(formObject); // You can send this to backend or handle however needed
+      });
+    </script>
+  </body>
+</html>
