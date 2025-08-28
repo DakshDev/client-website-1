@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.nav-menu {
+  @apply py-1 cursor-pointer transition-all ease-in-out duration-300 font-semibold relative;
+}
+.nav-btn {
+  @apply py-2 px-4 cursor-pointer rounded-md text-white bg-[#85082b] hover:bg-[#720c29] transition-all ease-in-out duration-300 font-semibold;
+}
+
+.nav-menu::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+.nav-menu:hover::after {
+  width: 100%;
+}

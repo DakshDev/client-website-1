@@ -19,8 +19,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Route
-app.get("/segmite-membership-form", (req, res) => {
-  console.log(__dirname);
+app.get("/", (req, res) => {
+  res.render("main");
+});
+app.get("/membership-form", (req, res) => {
   res.render("membership_form");
 });
 
