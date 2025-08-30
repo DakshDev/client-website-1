@@ -19,7 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Log environment variables and paths for debugging
-console.log("Environment Variables:", process.env);
+// console.log("Environment Variables:", process.env);
 console.log("Public Path:", path.join(path.resolve(__dirname, ".."), "public"));
 
 // Serve static files (Make sure 'public' folder exists at the correct location)
@@ -95,9 +95,10 @@ app.get("/membership-form", (_, res) => {
 });
 
 
-app.get("*", (_, res) => {
-  return res.send("<h1>Page Not Found</h1><a href='/'>Go Back></a>")
-})
+app.use((_, res) => {
+  return res.status(404).send("<h1>Page Not Found</h1><a href='/'>Go Back</a>");
+});
+
 
 // Start server and log the port
 app.listen(PORT, () => {
