@@ -21,7 +21,5 @@ body::before {
 }
 
 .brief-profile-section {
-  max-width: 80%;
-  margin: auto;
   line-height: 1.8;
 }
