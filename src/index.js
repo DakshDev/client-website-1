@@ -43,9 +43,11 @@ app.post("/send_mail", async (req, res) => {
     // Send Mail
     let transporter = nodemailer.createTransport({
       service: "gmail",
+      port: 587, 
+      secure: false, 
       auth: {
         user: "dakshkishore99@gmail.com", // your Gmail
-        pass: "ftco ugeu wwdu wysv", // generated app password
+        pass: process.env.GMAIL_APP_PASSWORD, // generated app password
       },
     });
 
