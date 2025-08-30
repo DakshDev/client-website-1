@@ -2,36 +2,23 @@ import express from "express";
 import { config } from "dotenv";
 import path from "path";
 import nodemailer from "nodemailer";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 
-// Load environment variables
-config();
-
-// Initialize express app
 const app = express();
+config();
 
 // Constants
 const PORT = process.env.PORT || 3000;
+const __dirname = import.meta.dirname;
 
-// Correctly set __dirname for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Log environment variables and paths for debugging
-console.log("Environment Variables:", process.env);
-console.log("Public Path:", path.join(path.resolve(__dirname, ".."), "public"));
-
-// Serve static files (Make sure 'public' folder exists at the correct location)
+// Static App
 app.use(express.static(path.join(path.resolve(__dirname, ".."), "public")));
 
-// Set up view engine and views folder
+// Middlewares
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
-// Middleware to parse request bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 // Route
 app.post("/send_mail", async (req, res) => {
@@ -84,16 +71,11 @@ app.post("/send_mail", async (req, res) => {
     return res.status(400).send({error: error})
   }
 });
-
 app.get("/", (req, res) => {
   res.render("main");
 });
-
 app.get("/membership-form", (req, res) => {
   res.render("membership_form");
 });
 
-// Start server and log the port
-app.listen(PORT, () => {
-  console.log(`🟢 Server is running on PORT:${PORT}`);
-});
+app.listen(PORT, () => console.log(`🟢 Server is running on PORT:${PORT}`));
