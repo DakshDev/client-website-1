@@ -9,67 +9,75 @@
   </head>
   <body>
     <%- include("./components/header") %>
-    <div class="mx-auto container bg-white md:px-8 px-4">
+    <div class="mx-auto container bg-white md:px-8 px-4 mt-10">
 
         <h2 class="text-[#870027] text-2xl font-bold my-8 ">Membership Form</h2>
 
 
       <div class="grid lg:grid-cols-2 gap-5 content-start">
-        <form id="membership_form" method="post" action="/send_mail" class="space-y-4 text-sm">
-          <%- include("./components/input", { title: "Name (Prof. Dr. Engr.)", name: "fullname",
-          placeholder: "Full Name", type: "text" }) %>
+        <form id="membership_form" class="space-y-6 text-sm">
+          <div class="space-y-2 text-sm">
+            <%- include("./components/input", { title: "Name (Prof. Dr. Engr.)", name: "fullname",
+            placeholder: "Full Name", type: "text" }) %>
 
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <%- include("./components/input", { title: "Highest qualification", name:
-            "qualification", placeholder: "Enter your Qualification", type: "text" }) %> <%-
-            include("./components/input", { title: "Specialization", name: "specialization",
-            placeholder: "Enter your Specialization", type: "text" }) %>
-          </div>
-
-          <%- include("./components/input", { title: "Designation and organization", name: "designation", placeholder: "Enter your Designation & Organization", type: "text" }) %>
-          <%- include("./components/input", { title: "Address", name: "address", placeholder: "Enter your Address", type: "text" }) %>
-          
-          
-
-          <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <%- include("./components/input", { title: "Email", name: "email", placeholder: "Enter your Email", type: "email" }) %>
-          <%- include("./components/input", { title: "Cell", name: "cell", placeholder: "Enter your Cell Number", type: "text" }) %>
-          </div>
-          <!-- -------------------- -->
-
-          <div>
-            <label class="mb-2 block font-medium">Tick the membership desired:</label>
             <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+              <%- include("./components/input", { title: "Highest qualification", name:
+              "qualification", placeholder: "Enter your Qualification", type: "text" }) %> <%-
+              include("./components/input", { title: "Specialization", name: "specialization",
+              placeholder: "Enter your Specialization", type: "text" }) %>
+            </div>
+
+            <%- include("./components/input", { title: "Designation and organization", name: "designation", placeholder: "Enter your Designation & Organization", type: "text" }) %>
+            <%- include("./components/input", { title: "Address", name: "address", placeholder: "Enter your Address", type: "text" }) %>
+            
+            
+
+            <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+              <%- include("./components/input", { title: "Email", name: "email", placeholder: "Enter your Email", type: "email" }) %>
+            <%- include("./components/input", { title: "Cell", name: "cell", placeholder: "Enter your Cell Number", type: "text" }) %>
+            </div>
+          </div>
+            <!--  -->
+          <div>
+            <label class="block font-semibold text-[#333] mb-1">Tick the membership desired:</label>
+            <div class="grid grid-cols-1 gap-1 md:grid-cols-2">
               <label
-                ><input type="radio" name="membership" value="Student Member" class="mr-2" />
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
+                ><input type="radio" required name="membership" value="Student Member" class="mr-2" />
                 Student Member</label
               >
               <label
-                ><input type="radio" name="membership" value="Member" class="mr-2" /> Member</label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
+                ><input type="radio" required name="membership" value="Member" class="mr-2" /> Member</label
               >
               <label
-                ><input type="radio" name="membership" value="Corporate Member" class="mr-2" />
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
+                ><input type="radio" required name="membership" value="Corporate Member" class="mr-2" />
                 Corporate Member</label
               >
               <label
-                ><input type="radio" name="membership" value="Life Member" class="mr-2" /> *Life
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
+                ><input type="radio" required name="membership" value="Life Member" class="mr-2" /> *Life
                 Member</label
               >
             </div>
           </div>
-
+            <!--  -->
           <div>
-            <label class="mb-2 block font-medium">Field(s) applicable:</label>
-            <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+            <label class="block font-semibold text-[#333] mb-1">Field(s) applicable:</label>
+            <div class="grid grid-cols-1 gap-1 md:grid-cols-2">
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Coal, oil & gas" class="mr-2" /> Coal,
                 oil & gas</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Ore deposits" class="mr-2" /> Ore
                 deposits</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input
                   type="checkbox"
                   name="fields"
@@ -79,10 +87,12 @@
                 Industrial rocks & minerals</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Mining/quarrying" class="mr-2" />
                 Mining/quarrying</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input
                   type="checkbox"
                   name="fields"
@@ -92,6 +102,7 @@
                 Mineral processing/ metallurgy</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input
                   type="checkbox"
                   name="fields"
@@ -101,18 +112,22 @@
                 Gemstones/ dimension stone</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Renewable energy" class="mr-2" />
                 Renewable energy</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Water/air pollution" class="mr-2" />
                 Water/air pollution</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input type="checkbox" name="fields" value="Sea water intrusion" class="mr-2" />
                 Sea water intrusion</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input
                   type="checkbox"
                   name="fields"
@@ -122,6 +137,7 @@
                 Soil & ground water salinity</label
               >
               <label
+              class="bg-gray-50 flex items-center px-2 py-1.5 rounded-md border border-gray-300"
                 ><input
                   type="checkbox"
                   name="fields"
@@ -130,51 +146,59 @@
                 />
                 Mineral based industries</label
               >
-              <div>
+              <label
+              class="bg-gray-50 flex items-center rounded-md overflow-hidden border border-gray-300">
                 <input
                   type="text"
                   name="fields"
                   placeholder="Any other ( Field applicable )"
-                  class="w-full rounded-md text-sm border px-2 py-2"
+                  class="w-full rounded-md text-sm px-2 py-1.5 h-full"
                 />
-              </div>
+              </label>
             </div>
           </div>
+            <!--  -->
+          <div class="space-y-2">
+            <div>
+              <label class="block font-semibold text-[#333]">
+                I would like to offer my services in SEGMITE consultancy projects. If yes, give
+                details of professional experience.
+              </label>
+              <textarea
+                required
+                name="experience"
+                placeholder="Enter Professional Experience"
+                class="mt-1 w-full rounded-md border p-2 py-1.5 max-h-100 min-h-20"
+                maxlength="5000"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block font-semibold text-[#333]">Specific job(s) to be done</label>
+              <textarea
+                name="jobs"
+                required
+                placeholder="Enter jobs to be done"
+                class="mt-1 w-full rounded-md border p-2 max-h-100 min-h-20"
+                maxlength="5000"
+              ></textarea>
+            </div>
 
-          <div>
-            <label class="block font-medium">
-              I would like to offer my services in SEGMITE consultancy projects. If yes, give
-              details of professional experience.
-            </label>
-            <textarea
-              name="experience"
-              placeholder="Enter Professional Experience"
-              class="mt-1 w-full rounded-md border p-2 max-h-100"
-              maxlength="5000"
-            ></textarea>
-          </div>
-
-          <div>
-            <label class="block font-medium">Specific job(s) to be done</label>
-            <textarea
-              name="jobs"
-              placeholder="Enter jobs to be done"
-              class="mt-1 w-full rounded-md border p-2 max-h-100"
-              maxlength="5000"
-            ></textarea>
-          </div>
-
-          <div class="flex">
-            <button
-              type="submit"
-              class="rounded-md bg-blue-600 px-6 py-2 text-white shadow hover:bg-blue-700"
-            >
-              Submit
-            </button>
+            <div class="flex">
+              <button
+              id="submit-button"
+                type="submit"
+                class="rounded-md bg-blue-600 px-2 py-2 text-white shadow hover:bg-blue-700 font-semibold flex justify-start items-center gap-2"
+              >
+              
+                <svg style="display: none;" class="animate-spin text-white size-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+              
+                Submit Membership Form
+              </button>
+            </div>
           </div>
         </form>
 
-        <div class="max-lg:mt-10 h-fit text-sm leading-relaxed bg-gray-100 p-4 rounded-md">
+        <div class="max-lg:mt-10 h-fit text-sm leading-relaxed bg-gray-50 p-4 rounded-md">
           <h3 class="mb-2 font-semibold text-[16px]">Scope of SEGMITE & Membership Benefits</h3>
           <p>
             Society of Economic Geologists & Mineral Technologists is a fast growing international
@@ -268,5 +292,58 @@
         Email: <a href="mailto:chiefeditor.ijeeg@gmail.com">chiefeditor.ijeeg@gmail.com</a></p>
       </div>
     </footer>
+
+
+
+    <!-- Send Mail -->
+   <script>
+  const form = document.getElementById("membership_form");
+  const btn =  document.getElementById("submit-button");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const fields = formData.getAll("fields");
+    const data = {
+      fullname: formData.get("fullname"),
+      qualification: formData.get("qualification"),
+      specialization: formData.get("specialization"),
+      designation: formData.get("designation"),
+      address: formData.get("address"),
+      email: formData.get("email"),
+      cell: formData.get("cell"),
+      membership: formData.get("membership"),
+      fields: formData.getAll("fields"),
+      experience: formData.get("experience"),
+      jobs: formData.get("jobs"),
+    }
+
+    if (data.fields.length === 0 || data.fields[0] === "") {
+      alert("Please select the Field(s) applicable !");
+      return;
+    }
+
+    
+    btn.disabled = true;
+    btn.firstElementChild.style.display = "block";
+    fetch("/send_mail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => alert("🟢 Form successfully sent"))
+    .then(result => {
+      console.log("Server response:", result);
+    })
+    .catch(err => console.error(err)).finally(() => {
+      btn.disabled = false; 
+      btn.firstElementChild.style.display = "none";
+      window.location.href = "/"
+    })
+      });
+</script>
+
   </body>
 </html>
