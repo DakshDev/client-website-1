@@ -10,86 +10,32 @@
   <body>
     <%- include("./components/header") %>
     <div class="mx-auto container bg-white md:px-8 px-4">
-      <div class="flex justify-center">
-        <h1
-          class="my-8 text-center text-lg font-semibold uppercase border-b-2 py-1 border-[#85082b] text-[#85082b]"
-        >
-          Membership Form
-        </h1>
-      </div>
+
+        <h2 class="text-[#870027] text-2xl font-bold my-8 ">Membership Form</h2>
+
 
       <div class="grid lg:grid-cols-2 gap-5 content-start">
-        <form id="membership_form" class="space-y-4 text-sm">
-          <div>
-            <label class="block font-medium">Name (Prof. Dr. Engr.)</label>
-            <input
-              type="text"
-              placeholder="Full Name"
-              name="fullName"
-              class="mt-1 w-full rounded-md border p-2"
-            />
-          </div>
+        <form id="membership_form" method="post" action="/send_mail" class="space-y-4 text-sm">
+          <%- include("./components/input", { title: "Name (Prof. Dr. Engr.)", name: "fullname",
+          placeholder: "Full Name", type: "text" }) %>
 
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label class="block font-medium">Highest qualification</label>
-              <input
-                type="text"
-                name="qualification"
-                placeholder="Qualification"
-                class="mt-1 w-full rounded-md border p-2"
-              />
-            </div>
-            <div>
-              <label class="block font-medium">Specialization</label>
-              <input
-                type="text"
-                name="specialization"
-                placeholder="Specialization"
-                class="mt-1 w-full rounded-md border p-2"
-              />
-            </div>
+            <%- include("./components/input", { title: "Highest qualification", name:
+            "qualification", placeholder: "Enter your Qualification", type: "text" }) %> <%-
+            include("./components/input", { title: "Specialization", name: "specialization",
+            placeholder: "Enter your Specialization", type: "text" }) %>
           </div>
 
-          <div>
-            <label class="block font-medium">Designation & organization</label>
-            <input
-              type="text"
-              name="designation"
-              placeholder="Designation & Organization"
-              class="mt-1 w-full rounded-md border p-2"
-            />
-          </div>
-
-          <div>
-            <label class="block font-medium">Address</label>
-            <textarea
-              name="address"
-              placeholder="Address"
-              class="mt-1 w-full rounded-md border p-2"
-            ></textarea>
-          </div>
+          <%- include("./components/input", { title: "Designation and organization", name: "designation", placeholder: "Enter your Designation & Organization", type: "text" }) %>
+          <%- include("./components/input", { title: "Address", name: "address", placeholder: "Enter your Address", type: "text" }) %>
+          
+          
 
           <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label class="block font-medium">E-mail</label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                class="mt-1 w-full rounded-md border p-2"
-              />
-            </div>
-            <div>
-              <label class="block font-medium">Cell #</label>
-              <input
-                type="text"
-                name="cell"
-                placeholder="Phone Number"
-                class="mt-1 w-full rounded-md border p-2"
-              />
-            </div>
+            <%- include("./components/input", { title: "Email", name: "email", placeholder: "Enter your Email", type: "email" }) %>
+          <%- include("./components/input", { title: "Cell", name: "cell", placeholder: "Enter your Cell Number", type: "text" }) %>
           </div>
+          <!-- -------------------- -->
 
           <div>
             <label class="mb-2 block font-medium">Tick the membership desired:</label>
@@ -189,7 +135,7 @@
                   type="text"
                   name="fields"
                   placeholder="Any other ( Field applicable )"
-                  class="w-full rounded-md text-sm border px-2 py-1"
+                  class="w-full rounded-md text-sm border px-2 py-2"
                 />
               </div>
             </div>
@@ -202,6 +148,7 @@
             </label>
             <textarea
               name="experience"
+              placeholder="Enter Professional Experience"
               class="mt-1 w-full rounded-md border p-2 max-h-100"
               maxlength="5000"
             ></textarea>
@@ -211,6 +158,7 @@
             <label class="block font-medium">Specific job(s) to be done</label>
             <textarea
               name="jobs"
+              placeholder="Enter jobs to be done"
               class="mt-1 w-full rounded-md border p-2 max-h-100"
               maxlength="5000"
             ></textarea>
@@ -254,14 +202,18 @@
 
           <h3 class="mt-4 font-semibold text-[16px]">Annual Membership Fee</h3>
           <p>
-            Pakistani: Student Member: Rs.1000/-, Member: Rs. 2000/-, Corporate Member: Rs.
-            5000/-<br />
-            Foreigner: Student Member: USD 50/-, Member USD 100/-, Corporate Member: USD 200/-
+            <span class="font-semibold">Pakistani</span>: Student Member: Rs.1000/-, Member: Rs.
+            2000/-, Corporate Member: Rs. 5000/-<br />
+            <span class="font-semibold">Foreigner</span>: Student Member: USD 50/-, Member USD
+            100/-, Corporate Member: USD 200/-
           </p>
           <p class="mt-2">
-            Membership fee may be paid for one, two or three years in a Single Installment by Cheque
-            drawn in favor of SEGMITE or Online (Account #IBAN: PK90NBPA10810041 02771446) and
-            mailed to the Convener or Treasure on the addresses given below.
+            <span class="font-semibold">Membership</span> fee may be paid for
+            <span class="font-semibold">one</span>, <span class="font-semibold">two</span> or
+            <span class="font-semibold">three</span>
+            years in a Single Installment by Cheque drawn in favor of SEGMITE or Online (Account
+            #IBAN: PK90NBPA10810041 02771446) and mailed to the
+            <span class="font-semibold">Convener or Treasure</span> on the addresses given below.
           </p>
           <p class="mt-2">
             ❖ Senior scientists and Engineers and other interested may join as Life Members by
@@ -271,37 +223,34 @@
 
           <h3 class="mt-4 font-semibold text-[16px]">Contacts</h3>
           <p>
-            <b>Prof. Dr.Viqar Husain</b><br />(Convener SEGMITE & Vice President AGID, Asia)<br />
+            <u>Prof. Dr.Viqar Husain</u><br />(Convener SEGMITE & Vice President AGID, Asia)<br />
             Chief Editor: Int. J. Economic & Environmental Geology<br />
             Department of Geology, University of Karachi, Pakistan<br />
 
             <a
               href="mailto:segmiteinternational@gmail.com"
               target="_blank"
-              class="text-blue-800 hover:text-blue-700"
+              class="text-blue-800 hover:underline"
               >segmiteinternational@gmail.com</a
             >,
             <a
               href="mailto:chiefeditor.ijeeg@uok.edu.pk"
               target="_blank"
-              class="text-blue-800 hover:text-blue-700"
+              class="text-blue-800 hover:underline"
               >chiefeditor.ijeeg@uok.edu.pk</a
             >
           </p>
 
           <p class="mt-2">
-            <b>Assoc. Prof. Suhail Anjum</b><br />(Treasurer SEGMITE)<br />
+            <u>Assoc. Prof. Suhail Anjum</u><br />(Treasurer SEGMITE)<br />
             Department of Geology, Federal Urdu University Gulsahn Iqbal, Karachi, Pakistan<br />
             <a
               href="mailto:anjum_52@hotmail.com"
               target="_blank"
-              class="text-blue-800 hover:text-blue-700"
+              class="text-blue-800 hover:underline"
               >anjum_52@hotmail.com</a
             >,
-            <a
-              href="mailto:segmite@gmail.com"
-              target="_blank"
-              class="text-blue-800 hover:text-blue-700"
+            <a href="mailto:segmite@gmail.com" target="_blank" class="text-blue-800 hover:underline"
               >segmite@gmail.com</a
             >
           </p>
@@ -309,40 +258,15 @@
       </div>
     </div>
 
-    <script>
-      document.getElementById("membership_form").addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-
-        const formObject = {
-          fullName: formData.get("fullName"),
-          qualification: formData.get("qualification"),
-          specialization: formData.get("specialization"),
-          designation: formData.get("designation"),
-          address: formData.get("address"),
-          email: formData.get("email"),
-          cell: formData.get("cell"),
-          membership: formData.get("membership"),
-          experience: formData.get("experience"),
-          fields: formData.getAll("fields"),
-          specificJobs: formData.get("jobs"),
-        };
-
-        if (!formObject.fullName) return alert("Please add fullname !");
-        if (!formObject.qualification) return alert("Please add qualification !");
-        if (!formObject.specialization) return alert("Please add specialization !");
-        if (!formObject.designation) return alert("Please add designation & organization !");
-        if (!formObject.address) return alert("Please add address !");
-        if (!formObject.email) return alert("Please add email !");
-        if (!formObject.cell) return alert("Please add cell !");
-        if (!formObject.membership) return alert("Please select membership !");
-        if (formObject.fields.length === 0) return alert("Please select Field applicable !");
-        if (!formObject.experience) return alert("Please add experience !");
-        if (!formObject.specificJobs) return alert("Please add specificJobs !");
-
-        console.log(formObject); // You can send this to backend or handle however needed
-      });
-    </script>
+    <footer class="footer mt-10">
+      <div class="footer-content">
+        <p><strong>SEGMITE Secretariat</strong><br>
+        Prof. Viqar Husain,<br>
+        Convener SEGMITE & Editor-in-Chief IJEEG<br>
+        Former Vice President AGID (Asia)<br>
+        Department of Geology, University of Karachi, Pakistan<br>
+        Email: <a href="mailto:chiefeditor.ijeeg@gmail.com">chiefeditor.ijeeg@gmail.com</a></p>
+      </div>
+    </footer>
   </body>
 </html>
