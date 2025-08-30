@@ -45,14 +45,14 @@ app.post("/send_mail", async (req, res) => {
       service: "gmail",
       auth: {
         user: "dakshkishore99@gmail.com", // your Gmail
-        pass: process.env.GMAIL_APP_PASSWORD, // generated app password
+        pass: "ftco ugeu wwdu wysv", // generated app password
       },
     });
 
     // mail options
     await transporter.sendMail({
       from: `Segmite Member <${data?.email}>`, // sender address
-      to: "info.bookluxe@gmail.com", // recipient
+      to: "dakshkishore99@gmail.com", // recipient
       subject: "Segmite Membership Form", // subject
       html: `<body style="width:100%;height:100%;margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%"><div lang="en" style="background-color:#f6f6f6;padding:20px 0"><table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;height:100%;background-color:#f6f6f6"><tr><td valign="top" style="display:flex;justify-content:center"><table align="center" cellspacing="0" cellpadding="0" style="border-collapse:separate;background-color:#e5e0e0;width:100%;border-radius:10px;overflow:hidden;max-width:600px"><tr><td style="padding:0 0 20px 0"><table bgcolor="#6aa84f" align="center" cellspacing="0" cellpadding="0" style="border-collapse:collapse;background-color:#6aa84f;width:100%"><tr><td align="center" style="padding:30px 10px"><h3 style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:28px;line-height:34px;font-weight:700;color:#fff">Segmite Member</h3></td></tr></table></td></tr><tr><td style="padding:0 10px 5px 10px"><table bgcolor="#f6f6f6" align="center" cellspacing="0" cellpadding="0" style="border-collapse:separate;width:100%;border:1px solid #ccc;border-radius:10px"><tr><td style="padding:10px"><h3 style="margin:0;font-family:Arial,Helvetica,sans-serif;line-height:20px;color:#333">Name (Prof. Dr. Engr.)</h3><p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#333">${
         data?.fullname
