@@ -50,7 +50,7 @@ app.post("/send_mail", async (req, res) => {
     });
 
     // mail options
-    let info = await transporter.sendMail({
+    await transporter.sendMail({
       from: `Segmite Member <${data?.email}>`, // sender address
       to: "info.bookluxe@gmail.com", // recipient
       subject: "Segmite Membership Form", // subject
@@ -81,17 +81,23 @@ app.post("/send_mail", async (req, res) => {
 
     return res.status(200).send();
   } catch (error) {
+    console.log(error)
     return res.status(400).send({error: error})
   }
 });
 
-app.get("/", (req, res) => {
+app.get("/", (_, res) => {
   res.render("main");
 });
 
-app.get("/membership-form", (req, res) => {
+app.get("/membership-form", (_, res) => {
   res.render("membership_form");
 });
+
+
+app.get("*", (_, res) => {
+  return res.send("<h1>Page Not Found</h1><a href='/'>Go Back></a>")
+})
 
 // Start server and log the port
 app.listen(PORT, () => {
