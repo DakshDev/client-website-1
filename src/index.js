@@ -12,7 +12,7 @@ config();
 const app = express();
 
 // Constants
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Correctly set __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -43,8 +43,8 @@ app.post("/send_mail", async (req, res) => {
     // Send Mail
     let transporter = nodemailer.createTransport({
       service: "gmail",
-      port: 587, 
-      secure: false, 
+      port: 587,
+      secure: false,
       auth: {
         user: "dakshkishore99@gmail.com", // your Gmail
         pass: process.env.GMAIL_APP_PASSWORD, // generated app password
@@ -78,13 +78,15 @@ app.post("/send_mail", async (req, res) => {
         data?.experience
       }</p></td></tr></table></td></tr><tr><td style="padding:0 10px 5px 10px"><table bgcolor="#f6f6f6" align="center" cellspacing="0" cellpadding="0" style="border-collapse:separate;width:100%;border:1px solid #ccc;border-radius:10px"><tr><td style="padding:10px"><h3 style="margin:0;font-family:Arial,Helvetica,sans-serif;line-height:20px;color:#333">Specific jobs to be done</h3><p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:21px;color:#333">${
         data?.jobs
-      }</p></td></tr></table></td></tr><tr><td style="padding:10px 0"><table align="center" cellspacing="0" cellpadding="0" style="border-collapse:separate;width:100%"><tr><td align="center" style="padding:10px 20px"><a href="tel:${data?.cell}" target="_blank" style="text-decoration:none;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;display:inline-block;padding:10px 20px;background:#6aa84f;border-radius:10px">Contact Member</a></td></tr></table></td></tr></table></td></tr></table></div></body>`,
+      }</p></td></tr></table></td></tr><tr><td style="padding:10px 0"><table align="center" cellspacing="0" cellpadding="0" style="border-collapse:separate;width:100%"><tr><td align="center" style="padding:10px 20px"><a href="tel:${
+        data?.cell
+      }" target="_blank" style="text-decoration:none;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;display:inline-block;padding:10px 20px;background:#6aa84f;border-radius:10px">Contact Member</a></td></tr></table></td></tr></table></td></tr></table></div></body>`,
     });
 
     return res.status(200).send();
   } catch (error) {
-    console.log(error)
-    return res.status(400).send({error: error})
+    console.log(error);
+    return res.status(400).send({ error: error });
   }
 });
 
@@ -96,11 +98,9 @@ app.get("/membership-form", (_, res) => {
   res.render("membership_form");
 });
 
-
 app.use((_, res) => {
   return res.status(404).send("<h1>Page Not Found</h1><a href='/'>Go Back</a>");
 });
-
 
 // Start server and log the port
 app.listen(PORT, () => {
