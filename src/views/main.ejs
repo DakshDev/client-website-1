@@ -125,22 +125,15 @@
         <div class="slideshow-container">
           <div class="mySlides fade">
             <img
-              src="/images/img.webp"
-              class="w-full rounded-sm md:h-120 h-80 object-cover object-center"
+              src="/images/1.webp"
+              class="w-full rounded-sm md:h-120 sm:h-80 h-60 object-cover object-center"
             />
           </div>
 
           <div class="mySlides fade">
             <img
-              src="/images/img.webp"
-              class="w-full rounded-sm md:h-120 h-80 object-cover object-center"
-            />
-          </div>
-
-          <div class="mySlides fade">
-            <img
-              src="/images/img.webp"
-              class="w-full rounded-sm md:h-120 h-80 object-cover object-center"
+              src="/images/2.webp"
+              class="w-full rounded-sm md:h-120 sm:h-80 h-60 object-cover object-center"
             />
           </div>
 
@@ -166,13 +159,8 @@
         <!-- Executive Committee -->
         <div class="mt-6">
           <h1 class="text-center text-2xl font-semibold">Executive Committee</h1>
-          <div class="flex gap-5 justify-start items-center overflow-x-auto mt-4 p-2">
-            <%- include("components/member") %> <%- include("components/member") %> <%-
-            include("components/member") %> <%- include("components/member") %> <%-
-            include("components/member") %> <%- include("components/member") %><%-
-            include("components/member") %> <%- include("components/member") %><%-
-            include("components/member") %> <%- include("components/member") %>
-          </div>
+
+          <%- include("components/member") %>
         </div>
       </main>
     </div>
@@ -191,11 +179,13 @@
       function currentSlide(n) {
         showSlides((slideIndex = n));
       }
+      setInterval(() => {
+        plusSlides(1);
+      }, 10 * 1000);
 
       function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
         if (n > slides.length) {
           slideIndex = 1;
         }
@@ -205,11 +195,7 @@
         for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
       }
     </script>
   </body>

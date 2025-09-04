@@ -1,4 +1,4 @@
-body::before {
+/* body::before {
   content: "";
   position: fixed;
   top: 50%;
@@ -11,7 +11,7 @@ body::before {
   opacity: 0.08;
   z-index: -1;
   pointer-events: none;
-}
+} */
 
 .brief-profile-section {
   line-height: 1.8;
