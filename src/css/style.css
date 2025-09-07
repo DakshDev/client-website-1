@@ -2,28 +2,29 @@
 
 body {
   background: #f1f1f1;
+  color: #333;
+  font-weight: 300;
 }
 html {
   scroll-behavior: smooth;
 }
 * {
-  font-family: Verdana, sans-serif;
+  font-family: sans-serif;
   box-sizing: border-box;
 }
 
 .nav-menu {
-  @apply cursor-pointer transition-all ease-in-out duration-300 font-bold relative;
+  @apply transition-all ease-in-out duration-300 relative;
 }
 .nav-menu::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0px;
   left: 0;
   width: 0%;
   height: 3px;
   border-radius: 5px;
   background-color: #fff;
-  transition: all 0.3s ease-in-out;
 }
 .nav-menu:hover::after {
   width: 100%;
