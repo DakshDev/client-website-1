@@ -116,10 +116,12 @@ app.use("/about", aboutRoute);
 app.use("/membership", membershipRoute);
 app.use("/organization", organizationRoute);
 app.use("/activities-and-notices", ActivitiesAndNoticesRoute);
-app.get("/archive", (_, res) => res.render("archive/index"));
+app.get("/activities", (_, res) => res.render("activities"));
+app.get("/journals", (_, res) => res.render("download/journals"));
+app.get("/past-events", (_, res) => res.render("past-events"));
+app.get("/videos", (_, res) => res.render("download/videos"));
+app.get("/publications", (_, res) => res.render("download/publications"));
 app.get("/contact", (_, res) => res.render("contact"));
-
-app.get("/membership-form", (_, res) => res.render("membership_form"));
 
 app.use((_, res) => {
   return res.status(404).send("<h1>Page Not Found</h1><a href='/'>Go Back</a>");
